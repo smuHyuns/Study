@@ -35,10 +35,10 @@ public class PrimeProblem01 {
     private static boolean[] getPrimeSieve(int N) {
         boolean[] sieve = new boolean[N + 1];
 
-        for (int i = 2; i <= N; i++) {
+        for (int i = 2; i * i <= N; i++) {
             if (sieve[i]) continue;
 
-            for (int j = 2 * i; j <= N; j += i) {
+            for (int j = i * i; j <= N; j += i) {
                 sieve[j] = true;
             }
         }
